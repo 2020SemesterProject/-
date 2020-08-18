@@ -29,6 +29,27 @@
     <script src="/js/snow.js"></script>
     <script src="/js/jquery.pure.tooltips.js"></script>
     <script src="/js/spop.min.js"></script>
+    <!-- 自己添加-->
+    <link href="../assets/dist/css/bootstrap.css" rel="stylesheet">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
+    <style>
+      /*  .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }*/
+    </style>
+    <!-- 自己添加-->
     <script>
         $(function() {
             $('#login #login-password').focus(function() {
@@ -102,17 +123,17 @@
     </script>
     <style type="text/css">
         html{width: 100%; height: 100%;}
-        body{
+        /*body{
             background-repeat: no-repeat;
             background-position: center center #2D0F0F;
             background-color: #00BDDC;
             background-image: url(/images/snow.jpg);
             background-size: 100% 100%;
         }
-        .snow-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 100001; }
+        .snow-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 100001; }*/
     </style>
 </head>
-<body>
+<body  class="text-center">
 <!-- 雪花背景 -->
 <div class="snow-container"></div>
 <!-- 登录控件 -->
@@ -125,38 +146,50 @@
         <div class="login sign-in-htm">
             <form action="/fore/fore_login" method="post" class="container offset1 loginform">
                 <!-- 猫头鹰控件 -->
-                <div id="owl-login" class="login-owl">
-                    <div class="hand"></div>
-                    <div class="hand hand-r"></div>
-                    <div class="arms">
-                        <div class="arm"></div>
-                        <div class="arm arm-r"></div>
-                    </div>
-                </div>
+                <!--      <div id="owl-login" class="login-owl">
+                         <div class="hand"></div>
+                         <div class="hand hand-r"></div>
+                         <div class="arms">
+                             <div class="arm"></div>
+                             <div class="arm arm-r"></div>
+                         </div>
+                     </div>-->
 
-                <div class="pad input-container">
-                    <section class="content">
-							<span class="input input--hideo">
-								<input class="input__field input__field--hideo" type="text" id="login-username"
-                                       autocomplete="off" placeholder="请输入用户名" tabindex="1" name="name" />
-								<label class="input__label input__label--hideo" for="login-username">
-									<i class="fa fa-fw fa-user icon icon--hideo"></i>
-									<span class="input__label-content input__label-content--hideo"></span>
-								</label>
-							</span>
-                        <span class="input input--hideo">
-								<input class="input__field input__field--hideo" type="password" id="login-password" name="password" placeholder="请输入密码" tabindex="2" maxlength="15"/>
-								<label class="input__label input__label--hideo" for="login-password">
-									<i class="fa fa-fw fa-lock icon icon--hideo"></i>
-									<span class="input__label-content input__label-content--hideo"></span>
-								</label>
-							</span>
-                    </section>
+                <!--  <div class="pad input-container">
+                     <section class="content">
+                             <span class="input input--hideo">
+                                 <input class="input__field input__field--hideo" type="text" id="login-username"
+                                        autocomplete="off" placeholder="请输入用户名" tabindex="1" name="name" />
+                                 <label class="input__label input__label--hideo" for="login-username">
+                                     <i class="fa fa-fw fa-user icon icon--hideo"></i>
+                                     <span class="input__label-content input__label-content--hideo"></span>
+                                 </label>
+                             </span>
+                         <span class="input input--hideo">
+                                 <input class="input__field input__field--hideo" type="password" id="login-password" name="password" placeholder="请输入密码" tabindex="2" maxlength="15"/>
+                                 <label class="input__label input__label--hideo" for="login-password">
+                                     <i class="fa fa-fw fa-lock icon icon--hideo"></i>
+                                     <span class="input__label-content input__label-content--hideo"></span>
+                                 </label>
+                             </span>
+                     </section>
+                 </div>-->
+                <img class="mb-4" src="../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+                <h1 class="h3 mb-3 font-weight-normal">请登录</h1>
+
+                <input type="text" id="login-username" name="name" class="form-control" placeholder="请输入用户名" />
+
+                <input type="password" id="login-password" name="password" class="form-control" placeholder="请输入密码" />
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
                 </div>
                 <div class="form-actions">
                     <a tabindex="5" class="btn btn-link text-muted" onClick="goto_register()">注册</a>
                     <input class="btn btn-primary" type="submit" tabindex="3" onClick="login()" value="登录"
                            style="color:white;"/>
+
                 </div>
             </form>
         </div>
