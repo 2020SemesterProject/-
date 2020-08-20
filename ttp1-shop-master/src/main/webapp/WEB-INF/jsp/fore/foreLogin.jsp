@@ -33,6 +33,10 @@
     <link href="../assets/dist/css/bootstrap.css" rel="stylesheet">
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="layui/layui.js"></script>
     <style>
       /*  .bd-placeholder-img {
             font-size: 1.125rem;
@@ -48,6 +52,8 @@
                 font-size: 3.5rem;
             }
         }*/
+
+
     </style>
     <!-- 自己添加-->
     <script>
@@ -131,19 +137,24 @@
             background-size: 100% 100%;
         }
         .snow-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 100001; }*/
+       #login1 { height: 500px; width: 250px; text-align: center }
+        body{
+            background:url("/images/sheep.jpg") no-repeat;
+        }
+
     </style>
 </head>
-<body  class="text-center">
+<body  class="text-center" >
 <!-- 雪花背景 -->
 <div class="snow-container"></div>
 <!-- 登录控件 -->
-<div id="login">
+<div id="login" class="div2">
     <input id="tab-1" type="radio" name="tab" class="sign-in hidden" checked />
     <input id="tab-2" type="radio" name="tab" class="sign-up hidden" />
     <input id="tab-3" type="radio" name="tab" class="sign-out hidden" />
     <div class="wrapper">
         <!-- 登录页面 -->
-        <div class="login sign-in-htm">
+        <div class="login sign-in-htm" id="login2">
             <form action="/fore/fore_login" method="post" class="container offset1 loginform">
                 <!-- 猫头鹰控件 -->
                 <!--      <div id="owl-login" class="login-owl">
@@ -175,37 +186,60 @@
                      </section>
                  </div>-->
                 <img class="mb-4" src="../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-                <h1 class="h3 mb-3 font-weight-normal">请登录</h1>
+                <h1 >请登录</h1>
 
-                <input type="text" id="login-username" name="name" class="form-control" placeholder="请输入用户名" />
+            <form class="form-horizontal">
+                    <div class="form-group has-feedback">
+                        <div class="username">
+                            <span class="glyphicon glyphicon-user fa-2x form-control-feedback"></span>
+                            <input type="text" class="form-control"  placeholder="请输入用户名" name="name">
+                        </div>
+                    </div>
+                    <div class="form-group pwd-top has-feedback">
+                        <div class="password">
+                            <span class="fa fa-unlock-alt fa-2x form-control-feedback"></span>
+                            <input type="password" class="form-control"  placeholder="请输入密码" name="password">
+                        </div>
+                    </div>
 
-                <input type="password" id="login-password" name="password" class="form-control" placeholder="请输入密码" />
+                <%--<input type="text" id="login-username" name="name" class="form-control" placeholder="请输入用户名" />
+
+
+                <input type="password" id="login-password" name="password" class="form-control" placeholder="请输入密码" />--%>
+
                 <div class="checkbox mb-3">
                     <label>
                         <input type="checkbox" value="remember-me"> Remember me
                     </label>
+                   <label  class="col-sm-4 col-md-4 col-lg-4 control-label register" onClick="goto_register()">注册</label>
                 </div>
-                <div class="form-actions">
-                    <a tabindex="5" class="btn btn-link text-muted" onClick="goto_register()">注册</a>
-                    <input class="btn btn-primary" type="submit" tabindex="3" onClick="login()" value="登录"
-                           style="color:white;"/>
+                <div class="form-actions" style="text-align: center">
+                <%--  <a tabindex="5" class="btn btn-link text-muted" onClick="goto_register()">注册</a>
+--%>
+                <%--  <button class="btn btn-login" type="submit" onClick="login()">登&nbsp;录</button>--%>
 
-                </div>
-            </form>
+                <input id="login1" class="btn btn-primary btn-lg" type="submit" tabindex="3" onClick="login()" value="登录"
+                       style="color:white;"/>
+
+            </div>
+
+
         </div>
-
+        </form>
         <!-- 注册页面 -->
         <div class="login sign-up-htm">
             <form action="register" class="container offset1 loginform" id="registerForm">
                 <!-- 猫头鹰控件 -->
-                <div id="owl-login" class="register-owl">
+                <%--<div id="owl-login" class="register-owl">
                     <div class="hand"></div>
                     <div class="hand hand-r"></div>
                     <div class="arms">
                         <div class="arm"></div>
                         <div class="arm arm-r"></div>
                     </div>
-                </div>
+                </div>--%>
+                <img class="mb-4" src="../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+                <h1 >请注册</h1>
                     <div class="pad input-container">
                         <section class="content">
 							<span class="input input--hideo">
@@ -233,25 +267,25 @@
                             <span class="input input--hideo">
                             <input class="input__field input__field--hideo" type="text" placeholder="请输入性别" name="sex" maxlength="15"/>
                             <label class="input__label input__label--hideo">
-									<i class="fa fa-fw fa-lock icon icon--hideo"></i>
+									<i class="fa fa-fw fa-intersex icon icon--hideo"></i>
 							</label>
                         </span>
                             <span class="input input--hideo">
                             <input class="input__field input__field--hideo" type="text"  name="telephone" placeholder="请输入电话" maxlength="15"/>
                             <label class="input__label input__label--hideo">
-									<i class="fa fa-fw fa-lock icon icon--hideo"></i>
+									<i class="fa fa-fw fa-phone icon icon--hideo"></i>
 							</label>
                         </span>
                             <span class="input input--hideo">
                             <input class="input__field input__field--hideo" type="text" name="address" placeholder="请输入地址" maxlength="15"/>
                             <label class="input__label input__label--hideo">
-									<i class="fa fa-fw fa-lock icon icon--hideo"></i>
+									<i class="fa fa-fw fa-home icon icon--hideo"></i>
 							</label>
                         </span>
                             <span class="input input--hideo">
                             <input class="input__field input__field--hideo" type="text"  name="email" placeholder="请输入邮箱" maxlength="25"/>
                             <label class="input__label input__label--hideo">
-									<i class="fa fa-fw fa-lock icon icon--hideo"></i>
+									<i class="fa fa-fw fa-envelope icon icon--hideo"></i>
 							</label>
                         </span>
                         </section>
