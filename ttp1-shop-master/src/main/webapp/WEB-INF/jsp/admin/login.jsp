@@ -31,7 +31,7 @@
             /*background-color:transparent;*/
             /* for IE */
             filter:alpha(opacity=90);
-            /* CSS3 standard */
+            /* CSS3 standard cstes*/
             opacity:0.9;
             margin: auto;
             margin-top: 150px;
