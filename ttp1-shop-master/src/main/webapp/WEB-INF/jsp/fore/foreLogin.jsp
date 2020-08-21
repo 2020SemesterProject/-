@@ -315,8 +315,6 @@
             background:url("/images/sheep.jpg") no-repeat;
             background-size: 100%;
             margin: 0;
-            background-repeat:no-repeat;
-            background-attachment:fixed
         }
 
 
