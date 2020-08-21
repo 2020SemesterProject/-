@@ -52,28 +52,7 @@
                 font-size: 3.5rem;
             }
         }*/
-      .default{
-          width:200px;
-          height:32px;
-          line-height:32px;
-          color:#999;
-          float:right;
-          font-size:10px;
-      }
-      .error{
-          height:32px;
-          line-height:32px;
-          color:#F00;
-          float:right;
-          font-size:10px;
-      }
-      .success{
-          height:32px;
-          line-height:32px;
-          color:#096;
-          float:right;
-          font-size:10px;
-      }
+
 
     </style>
     <!-- 自己添加-->
@@ -146,159 +125,7 @@
                 </c:if>
             });
         });
-        //注册js
-        function checkForm(){
-            var nametip = checkUserName();
-            var passtip = checkPassword();
-            var conpasstip = ConfirmPassword();
-            var emailtip = checkemail();
-            var phonetip = checkPhone();
-            var sextip = sexCheck();
-            var addresstip = checkAddress();
 
-            return nametip && passtip && conpasstip  && emailtip && phonetip && sextip && addresstip;
-        }
-        //验证用户名
-        function checkUserName(){
-            var username = document.getElementById('register-username');
-            var errname = document.getElementById('nameErr');
-            var pattern = /^[\u4e00-\u9fa5a-zA-Z0-9]/;  //用户名混合正则表达式(不包符号)
-            if(username.value.length == 0){
-                errname.innerHTML="用户名不能为空"
-                errname.className="error"
-                return false;
-            }
-            else{
-                errname.innerHTML="OK"
-                errname.className="success";
-                return true;
-            }
-        }
-        //输入密码
-        function checkPassword(){
-            var userpasswd = document.getElementById('register-password');
-            var errPasswd = document.getElementById('passwordErr');
-            var pattern = /^\w{4,20}$/; //密码要在4-8位
-            if(userpasswd.value.length == 0){
-                errPasswd.innerHTML="密码不能为空"
-                errPasswd.className="error"
-                return false;
-            }
-            if(!pattern.test(userpasswd.value)){
-                errPasswd.innerHTML="密码不合规范"
-                errPasswd.className="error"
-                return false;
-            }
-
-            else{
-                errPasswd.innerHTML="OK"
-                errPasswd.className="success";
-                return true;
-            }
-        }
-        //确认密码
-        function ConfirmPassword(){
-            var userpasswd = document.getElementById('register-password');
-            var userConPassword = document.getElementById('register-repassword');
-            var errConPasswd = document.getElementById('conPasswordErr');
-            if(userConPassword.value.length == 0){
-                errConPasswd.innerHTML="密码不能为空"
-                errConPasswd.className="error"
-                return false;
-            }
-            if((userpasswd.value)!=(userConPassword.value) || userConPassword.value.length == 0){
-                errConPasswd.innerHTML="上下密码不一致"
-                errConPasswd.className="error"
-                return false;
-            }
-            else{
-                errConPasswd.innerHTML="OK"
-                errConPasswd.className="success";
-                return true;
-            }
-        }
-        //确认邮箱
-        function checkemail(){
-
-            var useremail = document.getElementById('email');
-            var emailErr = document.getElementById('emailErr');
-            var pattern = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/;
-            if(useremail.value.length == 0){
-                emailErr.innerHTML="邮箱不能为空"
-                emailErr.className="error"
-                return false;
-            }
-            if(!pattern.test(useremail.value)){
-                emailErr.innerHTML="邮箱格式不正确"
-                emailErr.className="error"
-                return false;
-            }
-            else{
-                emailErr.innerHTML="OK"
-                emailErr.className="success";
-                return true;
-            }
-        }
-
-        //验证手机号
-        function checkPhone(){
-            var userphone = document.getElementById('userPhone');
-            var phonrErr = document.getElementById('phoneErr');
-            var pattern = /^1[34578]\d{9}$/; //验证手机号正则表达式
-            if(userphone.value.length == 0){
-                phonrErr.innerHTML="手机号码不能为空"
-                phonrErr.className="error"
-                return false;
-            }
-            if(!pattern.test(userphone.value)){
-                phonrErr.innerHTML="手机号码不合规范"
-                phonrErr.className="error"
-                return false;
-            }
-            else{
-                phonrErr.innerHTML="OK"
-                phonrErr.className="success";
-                return true;
-            }
-        }
-
-        //性别
-        function sexCheck() {
-           var sex = document.getElementById("sex");
-           var sexErr = document.getElementById('sexErr');
-           var pattern = /^男$|^女&/; //验证性别正则表达式
-            if(sex.value.length == 0){
-                sexErr.innerHTML="性别不能为空"
-                sexErr.className="error"
-                return false;
-            }
-            if(!pattern.test(sex.value)){
-                sexErr.innerHTML="性别不合规范"
-                sexErr.className="error"
-                return false;
-            }
-            else{
-                sexErr.innerHTML="OK"
-                sexErr.className="success";
-                return true;
-            }
-
-        }
-        //地址
-        function checkAddress(){
-            var address = document.getElementById("address");
-            var addressErr = document.getElementById('addressErr');
-            if(address.value.length == 0){
-                addressErr.innerHTML="地址不能为空"
-                addressErr.className="error"
-                return false;
-            }
-            else{
-                addressErr.innerHTML="OK"
-                addressErr.className="success";
-                return true;
-            }
-        }
     </script>
     <style type="text/css">
         html{width: 100%; height: 100%;}
@@ -313,10 +140,6 @@
        #login1 { height: 500px; width: 250px; text-align: center }
         body{
             background:url("/images/sheep.jpg") no-repeat;
-            background-size: 100%;
-            margin: 0;
-            background-repeat:no-repeat;
-            background-attachment:fixed
         }
 
 
@@ -332,7 +155,7 @@
     <input id="tab-3" type="radio" name="tab" class="sign-out hidden" />
     <div class="wrapper">
         <!-- 登录页面 -->
-        <div class="login sign-in-htm" id="login2">
+        <div class="login sign-in-htm" >
             <form action="/fore/fore_login" method="post" class="container offset1 loginform">
                 <!-- 猫头鹰控件 -->
                 <!--      <div id="owl-login" class="login-owl">
@@ -405,9 +228,8 @@
         </div>
         </form>
         <!-- 注册页面 -->
-
         <div class="login sign-up-htm">
-            <form action="register" class="container offset1 loginform" id="registerForm" onSubmit="return checkForm()">
+            <form action="register" class="container offset1 loginform" id="registerForm">
                 <!-- 猫头鹰控件 -->
                 <%--<div id="owl-login" class="register-owl">
                     <div class="hand"></div>
@@ -420,70 +242,54 @@
                 <img class="mb-4" src="../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
                 <h1 >请注册</h1>
                     <div class="pad input-container">
-
-
+                        <section class="content">
 							<span class="input input--hideo">
 								<input class="input__field input__field--hideo" type="text" id="register-username" name="name"
-                                       autocomplete="off" maxlength="15" onBlur="checkUserName()" oninput="checkUserName()"/>
-
+                                       autocomplete="off" placeholder="请输入用户名" maxlength="15" />
 								<label class="input__label input__label--hideo" for="register-username">
 									<i class="fa fa-fw fa-user icon icon--hideo"></i>
 									<span class="input__label-content input__label-content--hideo"></span>
 								</label>
 							</span>
-                               <span class="default" id="nameErr">请输入用户名</span>
-
-
                             <span class="input input--hideo">
-								<input class="input__field input__field--hideo" type="password" id="register-password" name="password"  maxlength="15" onBlur="checkPassword()" oninput="checkPassword()"/>
+								<input class="input__field input__field--hideo" type="password" id="register-password" name="password" placeholder="请输入密码" maxlength="15"/>
 								<label class="input__label input__label--hideo" for="register-password">
 									<i class="fa fa-fw fa-lock icon icon--hideo"></i>
 									<span class="input__label-content input__label-content--hideo"></span>
 								</label>
 							</span>
-
-                            <span class="default" id="passwordErr">请输入4到8位的密码</span>
-
                             <span class="input input--hideo">
-								<input class="input__field input__field--hideo" type="password" id="register-repassword"  maxlength="15" onBlur="ConfirmPassword()" oninput="ConfirmPassword()"/>
+								<input class="input__field input__field--hideo" type="password" id="register-repassword" placeholder="请确认密码" maxlength="15"/>
 								<label class="input__label input__label--hideo" for="register-repassword">
 									<i class="fa fa-fw fa-lock icon icon--hideo"></i>
 									<span class="input__label-content input__label-content--hideo"></span>
 								</label>
 							</span>
-
-                            <span class="default" id="conPasswordErr">请确认密码</span>
-
                             <span class="input input--hideo">
-                            <input class="input__field input__field--hideo" type="text"  name="sex" id="sex" maxlength="15" onblur="sexCheck()" oninput="sexCheck()" />
+                            <input class="input__field input__field--hideo" type="text" placeholder="请输入性别" name="sex" maxlength="15"/>
                             <label class="input__label input__label--hideo">
 									<i class="fa fa-fw fa-intersex icon icon--hideo"></i>
 							</label>
                         </span>
-                        <span class="default" id="sexErr">请输入男或女</span>
-
                             <span class="input input--hideo">
-                            <input class="input__field input__field--hideo" type="text"  name="telephone" id="userPhone"  maxlength="15" onBlur="checkPhone()" oninput="checkPhone()"/>
+                            <input class="input__field input__field--hideo" type="text"  name="telephone" placeholder="请输入电话" maxlength="15"/>
                             <label class="input__label input__label--hideo">
 									<i class="fa fa-fw fa-phone icon icon--hideo"></i>
 							</label>
                         </span>
-                        <span class="default" id="phoneErr">请输入11位手机号码</span>
                             <span class="input input--hideo">
-                            <input class="input__field input__field--hideo" type="text" name="address"  id="address" maxlength="15" onBlur="checkAddress()" oninput="checkAddress()"/>
+                            <input class="input__field input__field--hideo" type="text" name="address" placeholder="请输入地址" maxlength="15"/>
                             <label class="input__label input__label--hideo">
 									<i class="fa fa-fw fa-home icon icon--hideo"></i>
 							</label>
                         </span>
-                        <span class="default" id="addressErr">请输入地址</span>
                             <span class="input input--hideo">
-                            <input class="input__field input__field--hideo" type="text"  name="email" id="email" maxlength="25" onBlur="checkemail()" oninput="checkemail()"/>
+                            <input class="input__field input__field--hideo" type="text"  name="email" placeholder="请输入邮箱" maxlength="25"/>
                             <label class="input__label input__label--hideo">
 									<i class="fa fa-fw fa-envelope icon icon--hideo"></i>
 							</label>
                         </span>
-                        <span class="default" id="emailErr">请输入邮箱</span>
-
+                        </section>
                     </div>
                     <div class="form-actions">
                         <a class="btn pull-left btn-link text-muted" onClick="goto_login()">返回登录</a>
@@ -492,7 +298,6 @@
                     </div>
             </form>
         </div>
-
     </div>
 </div>
 </body>
