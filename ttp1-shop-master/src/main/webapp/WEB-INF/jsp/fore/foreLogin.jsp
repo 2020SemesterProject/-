@@ -313,7 +313,8 @@
        #login1 { height: 500px; width: 250px; text-align: center }
         body{
             background:url("/images/sheep.jpg") no-repeat;
-            background-size: 100%;
+            background-size: 100% ;
+            background-attachment: fixed;
             margin: 0;
         }
 
