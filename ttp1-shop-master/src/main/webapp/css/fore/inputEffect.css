@@ -16,7 +16,7 @@
 
  .input-container {
 	margin: 0 auto;
-	text-align: center;
+	text-align: right;
 	overflow: hidden;
 	background-color: aliceblue;
 }
@@ -869,7 +869,7 @@
 .input__label--hideo {
 	position: absolute;
 	padding: 1.25em 0 0;
-	width: 4em;
+	width: 3em;
 	height: 100%;
 }
 
