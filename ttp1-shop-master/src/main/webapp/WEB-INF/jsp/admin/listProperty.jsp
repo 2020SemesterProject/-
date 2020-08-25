@@ -47,10 +47,10 @@
                     <td>${p.id}</td>
                     <td>${p.name}</td>
                     <td><a href="/property/property_edit?id=${p.id}"><span
-                            class="glyphicon glyphicon-edit"></span></a></td>
-                    <td><a deleteLink="true"
-                           href="/property/property_delete?id=${p.id}"><span
-                            class=" 	glyphicon glyphicon-trash"></span></a></td>
+                            class="glyphicon glyphicon-edit"></span> 编辑</a></td>
+                    <td><button  class="btn btn-danger"><a deleteLink="true"
+                           href="/property/property_delete?id=${p.id}"><span  style="color:white"
+                            class=" 	glyphicon glyphicon-trash"></span></a>  删除</button></td>
                 </tr>
             </c:forEach>
             </tbody>
@@ -61,15 +61,20 @@
         <%@include file="../include/admin/adminPage.jsp"%>
     </div>
 
-    <div class="panel panel-warning addDiv">
+    <div class="panel panel-warning addDiv" >
         <div class="panel-heading">新增属性</div>
         <div class="panel-body">
+            <center>
             <form method="post" id="addForm" action="property_add">
                 <table class="addTable">
                     <tr>
-                        <td>属性名称</td>
-                        <td><input id="name" name="name" type="text"
-                                   class="form-control"></td>
+                        <td>属性名称：</td>
+                        <td><input id="name" name="name" type="text" style="width:200px;"
+                                   class="form-control" ></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
                     </tr>
                     <tr class="submitTR">
                         <td colspan="2" align="center">
@@ -79,6 +84,7 @@
                     </tr>
                 </table>
             </form>
+            </center>
         </div>
     </div>
 

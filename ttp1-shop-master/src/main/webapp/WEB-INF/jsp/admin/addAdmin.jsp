@@ -32,27 +32,28 @@
 <div class="panel panel-warning addDiv" style="margin-top: 100px; margin-left: 50px; margin-right: 50px">
     <div class="panel-heading">新增用户</div>
 
-    <div class="addErrorMessageDiv">
+    <%--<div class="addErrorMessageDiv">
         <div class="alert alert-info">
             <span class="errorMessage"></span>
         </div>
-    </div>
+    </div>--%>
 
     <div class="panel-body">
+        <center>
         <form method="post" id="addForm" action="/admin/admin_add">
             <table class="addTable">
                 <tr>
-                    <td>姓名</td>
+                    <td>姓名:</td>
                     <td><input id="name" name="name" type="text"
                                class="form-control"></td>
                 </tr>
                 <tr>
-                    <td>角色</td>
+                    <td>角色:</td>
                     <td><input id="type" name="type" type="text" placeholder="普通管理员/超级管理员"
                                class="form-control"></td>
                 </tr>
                 <tr>
-                    <td>密码</td>
+                    <td>密码:</td>
                     <td><input id="password" name="password" type="text"
                                class="form-control"></td>
                 </tr>
@@ -64,5 +65,6 @@
                 </tr>
             </table>
         </form>
+        </center>
     </div>
 </div>

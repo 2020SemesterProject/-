@@ -11,9 +11,10 @@
 <%@include file="../include/admin/adminHeader.jsp"%>
 
 <div class="workingArea">
-    <h1 class="label label-info" >用户管理</h1>
+
+    <h1 >用户管理</h1>
     <br>
-    <br>
+
 
     <div class="listDataTableDiv" style="margin-top: 100px; margin-left: 50px; margin-right: 50px">
         <table class="table table-bordered table-hover  table-condensed">
@@ -37,8 +38,8 @@
                         <td>${u.telephone}</td>
                         <td>${u.address}</td>
                         <td>${u.email}</td>
-                        <td><a deleteLink="true" href="/user/user_delete?id=${u.id}"><span
-                                class=" 	glyphicon glyphicon-trash"></span></a></td>
+                        <td><button class="btn btn-danger"><a deleteLink="true" href="/user/user_delete?id=${u.id}"><span
+                                class="glyphicon glyphicon-trash" style="color: white"> 删除</span></a></button></td>
                     </tr>
                 </c:forEach>
             </tbody>

@@ -68,8 +68,8 @@
                     <td>${p.stock}</td>
                     <td><a href="/productImage/productImage_list?pid=${p.id}"><span>图片</span></a></td>
                     <td><a href="/propertyValue/propertyValue_edit?pid=${p.id}"><span>属性</span></a></td>
-                    <td><a href="product_edit?id=${p.id}"><span>编辑</span></a></td>
-                    <td><a deleteLink="true" href="product_delete?id=${p.id}"><span>删除</span></a></td>
+                    <td><a href="product_edit?id=${p.id}"><span  class="glyphicon glyphicon-edit">编辑</span></a></td>
+                    <td><button  class="btn btn-danger"><a deleteLink="true" href="product_delete?id=${p.id}"><span class="glyphicon glyphicon-trash"  style="color:white">  删除</span></a></button></td>
                 </tr>
             </c:forEach>
             </tbody>
@@ -83,25 +83,26 @@
     <div class="panel panel-warning addDiv">
         <div class="panel-heading">新增产品</div>
         <div class="panel-body">
+            <center>
             <form method="post" id="addForm" action="/product/product_add">
                 <table class="addTable">
                     <tr>
-                        <td>产品名称</td>
+                        <td>产品名称:</td>
                         <td><input id="name" name="name" type="text"
                                    class="form-control"></td>
                     </tr>
                     <tr>
-                        <td>原价格</td>
+                        <td>原价格:</td>
                         <td><input value="99.98" name="original_price" type="text"
                                    class="form-control"></td>
                     </tr>
                     <tr>
-                        <td>优惠价格</td>
+                        <td>优惠价格:</td>
                         <td><input id="promote_price"  value="19.98" name="promote_price" type="text"
                                    class="form-control"></td>
                     </tr>
                     <tr>
-                        <td>库存</td>
+                        <td>库存:</td>
                         <td><input id="stock"  value="99" name="stock" type="text"
                                    class="form-control"></td>
                     </tr>
@@ -113,6 +114,7 @@
                     </tr>
                 </table>
             </form>
+            </center>
         </div>
     </div>
 

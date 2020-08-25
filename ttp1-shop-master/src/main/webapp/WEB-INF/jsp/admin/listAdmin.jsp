@@ -31,8 +31,8 @@
                     <td>${a.id}</td>
                     <td>${a.name}</td>
                     <td>${a.type}</td>
-                    <td><a deleteLink="true" href="/admin/admin_delete?id=${a.id}"><span
-                            class=" 	glyphicon glyphicon-trash"></span></a></td>
+                    <td><button class="btn btn-danger"><a deleteLink="true" href="/admin/admin_delete?id=${a.id}"><span
+                            class="glyphicon glyphicon-trash" style="color: white">删除</span></a></button></td>
                 </tr>
             </c:forEach>
             </tbody>

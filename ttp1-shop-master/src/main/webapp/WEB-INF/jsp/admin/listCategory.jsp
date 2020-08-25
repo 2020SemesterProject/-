@@ -34,8 +34,8 @@
                     <td><a href="/property/property_list?cid=${c.id}">属性管理</a></td>
                     <td><a href="/product/product_list?cid=${c.id}">商品管理</a></td>
                     <td><img height="50px" src="/images/category/${c.id}.jpg"></td>
-                    <td><a href="/category/category_edit?id=${c.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
-                    <td><a deleteLink="true" href="/category/category_delete?id=${c.id}"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <td><a href="/category/category_edit?id=${c.id}"><span class="glyphicon glyphicon-edit">编辑</span></a></td>
+                    <td><button  class="btn btn-danger"><a deleteLink="true" href="/category/category_delete?id=${c.id}"><span class="glyphicon glyphicon-trash"  style="color:white"></span></a>  删除</button></td>
                 </tr>
             </c:forEach>
         </tbody>

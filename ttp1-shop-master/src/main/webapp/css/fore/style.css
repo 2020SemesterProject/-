@@ -97,9 +97,9 @@ div.carouselBackgroundDiv{
 	background-color: #E8E8E8;
 	position: absolute;
 	top:36px;
-	
+
 	z-index:-1;
-	
+
 }
 
 div.categoryWithCarousel div.headbar {
@@ -176,7 +176,7 @@ div.categoryWithCarousel div.rightMenu a {
 
 div.categoryWithCarousel div.head {
 	width: 200px;
-	background-color: #C60A0A;
+	background-color: lightblue;
 	height: 36px;
 	line-height: 36px;
 	font-size: 16px;
@@ -992,7 +992,7 @@ div.productReviewItem div.productReviewItemUserInfo {
 
 div.productReviewItemContent {
 	/* 	margin:0px 0px -30px 0px; */
-	
+
 }
 
 div.productReviewItemDate {
@@ -1320,7 +1320,7 @@ span.confirmMoney {
 img.aliPayImg {
 	/* 	width:230px; */
 	/* 	height:230px;	 */
-	
+
 }
 
 button.confirmPay {

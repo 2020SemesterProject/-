@@ -27,6 +27,7 @@
 <div class="panel panel-warning addDiv" style="margin-top: 100px; margin-left: 50px; margin-right: 50px">
         <div class="panel-heading">新增分类</div>
         <div class="panel-body">
+            <center>
             <form id="addForm" action="/category/category_add" method="post" enctype="multipart/form-data">
                 <table class="addTable">
                     <tr>
@@ -34,7 +35,7 @@
                         <td><input  id="name" name="name" type="text" class="form-control"></td>
                     </tr>
                     <tr>
-                        <td>分类图片</td>
+                        <td>分类图片:</td>
                         <td>
                             <input id="categoryPic" accept="image/*" type="file" name="multipartFile" />
                         </td>
@@ -42,10 +43,12 @@
                     <tr class="submitTR">
                         <td colspan="2" align="center">
                             <button type="submit" class="btn btn-success">提 交</button>
+                            &nbsp;&nbsp;
                             <button type="reset" class="btn btn-primary">重置</button>
                         </td>
                     </tr>
                 </table>
             </form>
+            </center>
         </div>
 </div>
