@@ -362,7 +362,7 @@
                              </span>
                      </section>
                  </div>-->
-                <img class="mb-4" src="../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+                <img class="mb-4" src="../assets/brand/bootstrap-solid.svg" alt="" width="80" height="80">
                 <h1 >请登录</h1>
 
             <form class="form-horizontal">

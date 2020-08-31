@@ -61,4 +61,8 @@ public interface AdminService {
      */
     boolean exist(String name);
 
+    /**
+     * 设置管理员姓名密码
+     */
+    Admin set(String name,String password);
 }

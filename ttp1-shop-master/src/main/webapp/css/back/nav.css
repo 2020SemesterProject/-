@@ -3,12 +3,12 @@
 body,html{height: 100%;}
 body,ul{margin:0;padding:0}
 body{font:14px "微软雅黑","宋体","Arial Narrow",HELVETICA;-webkit-text-size-adjust:100%;}
-li{list-style:none} 
+li{list-style:none}
 a{text-decoration:none;}
 /* 以上实际使用若已初始化可删除 */
 
 /* nav */
-.nav{width: 200px;height: 100%;background: #263238;transition: all .3s;}
+.nav{width: 200px;height: 100%;background: #000000;transition: all .3s;}
 .nav a{display: block;overflow: hidden;padding-left: 20px;line-height: 46px;max-height: 46px;color: #ABB1B7;transition: all .3s;}
 .nav-item{position: relative;margin-left: 35px;}
 .nav-item.nav-show{border-bottom: none;}

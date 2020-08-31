@@ -172,6 +172,38 @@
       <artifactId>mybatis-generator-core</artifactId>
       <version>${mybatis-generator.version}</version>
     </dependency>
+    <!--人脸识别依赖-->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.25</version>
+    </dependency>
+    <!--人脸识别依赖-->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.7.25</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-nop</artifactId>
+          <version>1.7.2</version>
+      </dependency>
+    <!--人脸识别依赖-->
+    <dependency>
+      <groupId>com.baidu.aip</groupId>
+      <artifactId>java-sdk</artifactId>
+      <version>4.11.0</version>
+    </dependency>
+    <!--人脸识别依赖-->
+    <dependency>
+      <groupId>com.baidu.aip</groupId>
+      <artifactId>java-sdk</artifactId>
+      <version>4.3.2</version>
+    </dependency>
+
+
 
   </dependencies>
 

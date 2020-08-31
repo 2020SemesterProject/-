@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: admin
-  Date: 2018/10/15
-  Time: 15:13
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
@@ -32,7 +26,7 @@
         <img src="images/admin/face.jpg" style="height: 100px;margin-top: 5px; border-radius:200px; ">
     </div>
     <div style="text-align:center; ">
-        <p><font style="font-family:微软雅黑;color: white;font-size: 16px;">北冥有鱼</font></p>
+        <p><font style="font-family:微软雅黑;color: white;font-size: 16px;">C组管理</font></p>
     </div>
     <ul>
         <li class="nav-item">
@@ -52,9 +46,9 @@
             </ul>
         </li>
         <li class="nav-item">
-            <a href="javascript:;">会员管理</a>
+            <a href="javascript:;">用户管理</a>
             <ul>
-                <li><a href="user/getUserList" target="right"><span>会员列表</span></a></li>
+                <li><a href="user/getUserList" target="right"><span>用户列表</span></a></li>
             </ul>
         </li>
         <li class="nav-item">
@@ -63,13 +57,13 @@
                 <li><a href="order/getOrderList" target="right"><span>订单列表</span></a></li>
             </ul>
         </li>
-        <li class="nav-item">
+        <%--<li class="nav-item">
             <a href="javascript:;">积分管理</a>
             <ul>
                 <li><a href="credit/getCreditList" target="right"><span>积分列表</span></a></li>
                 <li><a href="credit/creditRule" target="right"><span>积分规则</span></a></li>
             </ul>
-        </li>
+        </li>--%>
         <li class="nav-item">
             <a href="javascript:;">系统管理</a>
             <ul>
