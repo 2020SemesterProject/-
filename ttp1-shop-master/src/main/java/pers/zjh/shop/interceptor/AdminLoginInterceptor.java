@@ -33,7 +33,12 @@ public class AdminLoginInterceptor extends HandlerInterceptorAdapter {
         // 存储不需要登录也能访问的路径
         String[] noNeedLoginPage = new String[]{
                 "adminLogin",
-                "admin_login"
+                "admin_login",
+                "addAdminPage",
+                "adminLogin",
+                "admin_add",
+                "admin_delete",
+                "getAdminList",
         };
         String uri = request.getRequestURI();
         uri = StringUtils.remove(uri, contextPath);
