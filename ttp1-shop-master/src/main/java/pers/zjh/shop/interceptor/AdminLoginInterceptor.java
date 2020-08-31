@@ -28,17 +28,13 @@ public class AdminLoginInterceptor extends HandlerInterceptorAdapter {
      * @throws IOException
      */
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException {
-        HttpSession session = request.getSession();
+       HttpSession session = request.getSession();
         String contextPath = session.getServletContext().getContextPath();
         // 存储不需要登录也能访问的路径
         String[] noNeedLoginPage = new String[]{
                 "adminLogin",
                 "admin_login",
-                "addAdminPage",
-                "adminLogin",
-                "admin_add",
-                "admin_delete",
-                "getAdminList",
+                "success"
         };
         String uri = request.getRequestURI();
         uri = StringUtils.remove(uri, contextPath);

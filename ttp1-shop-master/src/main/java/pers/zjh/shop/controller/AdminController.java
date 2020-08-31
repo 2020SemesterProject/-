@@ -1,16 +1,26 @@
 package pers.zjh.shop.controller;
 
+
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import pers.zjh.shop.pojo.Admin;
 import pers.zjh.shop.service.AdminService;
+import pers.zjh.shop.util.FaceSpot;
 import pers.zjh.shop.util.Page;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 /**
@@ -114,6 +124,37 @@ public class AdminController {
      */
     @RequestMapping("adminLogin")
     public String login(){ return "admin/login"; }
+
+    /**
+     * 人脸识别跳转
+     * @return
+     */
+    @RequestMapping("FaceLoginServlet")
+    @ResponseBody
+    public String Face(String img) {
+        JSONObject js = FaceSpot.searchFace(img, "face", "1");
+        System.out.println(js.toString(1));
+        return js.toString();
+    }
+
+    /**
+     * 人脸识别成功跳转
+     */
+    @RequestMapping("success")
+    public String facesucc(HttpSession session){
+      String name = "玛丽";
+      String password="23";
+      Admin admin = adminService.set(name,password);
+        // 用户不存在则回到登录界面
+        if (null == admin){
+            return "admin/login";
+        }
+        // 登录成功跳转到主页面
+        session.setAttribute("admin",admin.getName());
+        return "admin/adminHome";
+    }
+
+
 
 }
 

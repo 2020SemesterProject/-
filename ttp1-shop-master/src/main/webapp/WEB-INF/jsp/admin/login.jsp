@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="/js/jquery-2.1.1.js"></script>
     <title>商城后台系统登录</title>
     <style type="text/css">
         body{
@@ -33,8 +34,33 @@
             filter:alpha(opacity=90);
             /* CSS3 standard cstes*/
             opacity:0.9;
-            margin: auto;
+            margin-left: 500px;
             margin-top: 150px;
+        }
+        .card{
+            background: #fff;
+            height: 280px;
+            width: 300px;
+            margin-left: 150px;
+            margin-top: 30px;
+            position:fixed;
+            top:200px;
+            right:100px;
+        }
+        .cardHeader{
+            width: 100%;
+            height: 45px;
+            float: left;
+            background-color: #B0C4DE;
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            line-height: 55px
+        }
+        .facebut{
+            margin-left:30px;
+            margin-top:20px;
+            width:80%;
         }
     </style>
 
@@ -71,10 +97,120 @@
             <button type="submit" tabindex="5"  onClick="adminlogin()">登录</button>
         </div>
     </form>
+
+ </div>
 </div>
+
+<div class="card">
+    <div class="cardHeader ">人脸识别登录</div>
+    <button class="facebut" id="open">开启摄像头</button>
+    <button class="facebut" id="close">关闭摄像头</button>
+    <button class="facebut" id="CatchCode">确定人脸识别</button>
+
+</div>
+<div align="center" style="float: left;">
+    <video id="video" width="400px" height="400px" autoplay></video>
+    <canvas hidden="hidden" id="canvas" width="626" height="800"></canvas>
 </div>
 <div class="bottom">©2020 Good Shopping 小学期C组后台</div>
 
 
 </body>
+<script type="text/javascript">
+    var video;//视频流对象
+    var context;//绘制对象
+    var canvas;//画布对象
+    $(function() {
+        var flag = false;
+        //开启摄像头
+        $("#open").click(function() {
+            //判断摄像头是否打开
+            if (!flag) {
+                //调用摄像头初始化
+                open();
+                flag = true;
+            }
+        });
+        //关闭摄像头
+        $("#close").click(function() {
+            //判断摄像头是否打开
+            if (flag) {
+                video.srcObject.getTracks()[0].stop();
+                flag = false;
+            }
+        });
+        //拍照
+        $("#CatchCode").click(function() {
+            if (flag) {
+                context.drawImage(video, 0, 0, 330, 250);
+                CatchCode();
+            } else
+                alert("请先开启摄像头!");
+        });
+    });
+    //将当前图像传输到后台
+    function CatchCode() {
+        //获取图像
+        var img = getBase64();
+        //Ajax将Base64字符串传输到后台处理
+        $.ajax({
+            type : "POST",
+            url : "FaceLoginServlet",
+            data : {
+                img : img
+            },
+            dataType : "JSON",
+            success : function(data) {
+                //返回的结果
+               // alert(JSON.stringify(data));
+                //取出对比结果的返回分数，如果分数90以上就判断识别成功了
+                if(parseInt(data.result.user_list[0].score) > 70) {
+                    //关闭摄像头
+                    video.srcObject.getTracks()[0].stop();
+                    //提醒用户识别成功
+                    alert("验证成功!");
+                    //验证成功跳转页面
+                    window.location.href="success";
+                }else{
+                    alert("验证失败!");
+                }
+            },
+            error : function(q, w, e) {
+                alert(q + w + e);
+            }
+        });
+    };
+    //开启摄像头
+    function open() {
+        //获取摄像头对象
+        canvas = document.getElementById("canvas");
+        context = canvas.getContext("2d");
+        //获取视频流
+        video = document.getElementById("video");
+        var videoObj = {
+            "video" : true
+        }, errBack = function(error) {
+            console.log("Video capture error: ", error.code);
+        };
+        context.drawImage(video, 0, 0, 330, 250);
+        //初始化摄像头参数
+        if (navigator.getUserMedia || navigator.webkitGetUserMedia
+            || navigator.mozGetUserMedia) {
+            navigator.getUserMedia = navigator.getUserMedia
+                || navigator.webkitGetUserMedia
+                || navigator.mozGetUserMedia;
+            navigator.getUserMedia(videoObj, function(stream) {
+                video.srcObject = stream;
+                video.play();
+            }, errBack);
+        }
+    }
+    //将摄像头拍取的图片转换为Base64格式字符串
+    function getBase64() {
+        //获取当前图像并转换为Base64的字符串
+        var imgSrc = canvas.toDataURL("image/png");
+        //截取字符串
+        return imgSrc.substring(22);
+    };
+</script>
 </html>

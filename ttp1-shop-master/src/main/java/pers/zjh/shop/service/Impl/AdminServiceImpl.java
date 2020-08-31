@@ -106,4 +106,19 @@ public class AdminServiceImpl implements AdminService {
         return true;
     }
 
+    /**
+     * @Describe    根据参数name, password 查询管理员,用于人脸识别
+     * @param       name,password
+     * @return      Admin
+     */
+    @Override
+    public Admin set(String name, String password){
+        AdminExample example = new AdminExample();
+        example.createCriteria().andNameEqualTo(name).andPasswordEqualTo(password);
+        List<Admin> admins = adminMapper.selectByExample(example);
+        if(admins.isEmpty())
+            return null;
+        return admins.get(0);
+    }
+
 }

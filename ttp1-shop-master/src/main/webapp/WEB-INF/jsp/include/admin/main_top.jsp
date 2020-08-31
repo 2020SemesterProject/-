@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: admin
-  Date: 2018/10/15
-  Time: 15:20
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
@@ -30,16 +24,16 @@
     <link href="css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background: #263238">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background: #000000">
     <div class="navbar-header">
-        <a class="navbar-brand">简易商城</a>
+        <a class="navbar-brand">商城后台管理系统</a>
     </div>
     <div class="col-md-4 col-md-offset-6">
         <p class="navbar-text">
             当前用户:&nbsp;&nbsp;
             <font color="red"><%= session.getAttribute("admin")%></font>&nbsp;&nbsp;
             登录时间:&nbsp;&nbsp;<font color="red"><%=today %></font>
-        <img class="img-circle" src="images/admin/face.jpg" style="height: 42px">
+
 
     </div>
 </nav>

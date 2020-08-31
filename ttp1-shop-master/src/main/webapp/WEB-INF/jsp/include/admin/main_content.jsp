@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: admin
-  Date: 2018/10/15
-  Time: 15:22
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
     String path = request.getContextPath();
@@ -31,19 +25,19 @@
         }
     </style>
 </head>
-<%
+<%--<%
     String osName = System.getProperty("os.name");
     String user = System.getProperty("user.name");
     String version = System.getProperty("java.version");
-%>
+%>--%>
 <body>
 <div class="container-fluid">
-    <h3>我的桌面</h3>
+    <h3>管理员桌面</h3>
     <div class="col-md-10">
         <table class="table table-bordered table-hover">
-            <caption><strong>系统信息</strong></caption>
+            <caption><strong>成员信息</strong></caption>
             <tbody>
-            <tr>
+            <%--<tr>
                 <td class="col-md-4">操作系统</td>
                 <td><%=osName %></td>
             </tr>
@@ -54,48 +48,33 @@
             <tr>
                 <td class="col-md-4">登录用户</td>
                 <td><%=user %></td>
+            </tr>--%>
+            <tr>
+                <td class="col-md-4" style="color: blue">成员班级</td>
+                <td class="col-md-4" style="color: blue">成员名字</td>
+            </tr>
+            <tr>
+                <td class="col-md-4">网络5班</td>
+                <td class="col-md-4">陈晓怡</td>
+            </tr>
+            <tr>
+                <td class="col-md-4">网络6班</td>
+                <td class="col-md-4">柯英怡</td>
+            </tr>
+            <tr>
+                <td class="col-md-4">网络6班</td>
+                <td class="col-md-4">梁焱星</td>
+            </tr>
+            <tr>
+                <td class="col-md-4">网络6班</td>
+                <td class="col-md-4">雷腾龙</td>
             </tr>
             </tbody>
         </table>
     </div>
     <div class="col-md-10">
-        <table class="table table-bordered table-hover">
-            <caption><strong>开发环境</strong></caption>
-            <tbody>
-            <tr>
-                <td class="col-md-4">JDK</td>
-                <td>JDK<%=version %></td>
-            </tr>
-            <tr>
-                <td class="col-md-4">Tomcat</td>
-                <td>Tomcat 9.0</td>
-            </tr>
-            <tr>
-                <td class="col-md-4">数据库</td>
-                <td>MySql 5.7</td>
-            </tr>
-            <tr>
-                <td class="col-md-4">用户名</td>
-                <td>root</td>
-            </tr>
-            <tr>
-                <td class="col-md-4">密码</td>
-                <td>admin</td>
-            </tr>
-            <tr>
-                <td class="col-md-4">SpringMVC</td>
-                <td>SpringMVC</td>
-            </tr>
-            <tr>
-                <td class="col-md-4">Mybatis</td>
-                <td>Mybatis 3.1.1</td>
-            </tr>
-            <tr>
-                <td class="col-md-4">Spring</td>
-                <td>Spring</td>
-            </tr>
-            </tbody>
-        </table>
+        <h1 style="color: red">注：该后台仅供C组成员内部使用</h1>
+
     </div>
 </div>
 </body>
