@@ -179,10 +179,16 @@
 						<fmt:formatNumber type="number" value="${product.promote_price}" minFractionDigits="2"/>
 					</span>
                     </div>
+
+                    <div class="contianer">
+
+
+                    </div>
                 </div>
             </div>
-            <div class="productSaleAndReviewNumber">
-                <div>销量 <span class="redColor boldWord"> ${product.saleCount}</span></div>
+           <div class="productSaleAndReviewNumber">
+                <div>月销量 <span class="redColor boldWord">${product.saleCount}</span></div>
+               <div>送积分 <span class="redColor boldWord">6</span></div>
             </div>
             <div class="productNumber">
                 <span>数量</span>
@@ -204,6 +210,7 @@
 					</span>
 					</a>
 				</span>件</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 <span>库存${product.stock}件</span>
             </div>
 

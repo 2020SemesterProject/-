@@ -35,8 +35,8 @@
 								</span>
                             </a>
                             <span class="productPrice">
-                                原价: <fmt:formatNumber type="number" value="${p.original_price}" minFractionDigits="2"/><br/>
-								现价: <fmt:formatNumber type="number" value="${p.promote_price}" minFractionDigits="2"/>
+                                原价:¥ <fmt:formatNumber type="number" value="${p.original_price}" minFractionDigits="2"/><br/>
+								现价:¥ <fmt:formatNumber type="number" value="${p.promote_price}" minFractionDigits="2"/>
 							</span>
                         </div>
                     </c:if>

@@ -75,6 +75,7 @@
 
 
 
+
     $(function() {
         $(".dropdown-toggle").on("mouseover", function() {
             $(".dropdown-menu").show();
@@ -90,7 +91,17 @@
         })
     })
 
+    $(function() {
 
+        // 循环轮播到上一个项目
+        $(".prev-slide").click(function () {
+            $("#carousel-of-product").carousel('prev');
+        });
+        // 循环轮播到下一个项目
+        $(".next-slide").click(function () {
+            $("#carousel-of-product").carousel('next');
+        })
+    });
 
 </script>
 <div class="categoryWithCarousel" >
@@ -101,7 +112,7 @@
             <div class="btn-group">
                 <button type="button" style="background-color: lightblue" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <%--<span style="margin-left:50px" class="glyphicon glyphicon-th-list"></span>--%>
-                        <span style="margin-left:50px" class="dropdown-toggle" data-toggle="dropdown"><font style="color: white" font-size="16px">商品分类</font></span>
+                        <span style="margin-left:50px" class="dropdown-toggle" data-toggle="dropdown"><font style="color: white" font-size="20px">商品分类</font></span>
                 </button>
                 <ul class="dropdown-menu">
                     <c:forEach items="${categories}" var="c">
@@ -167,7 +178,17 @@
             <div class="item">
                 <img  class="carouselImage" src="/images/carousel/4.jpg" >
             </div>
+
+            <a class="left carousel-control" href="#carousel-of-product" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-of-product" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
+
 
     </div>
 

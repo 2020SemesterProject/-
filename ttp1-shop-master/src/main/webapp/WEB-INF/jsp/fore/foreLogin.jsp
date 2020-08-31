@@ -370,7 +370,8 @@
                         <div class="username">
                             <span class="glyphicon glyphicon-user fa-2x form-control-feedback"></span>
                             <input type="text" class="form-control"  placeholder="请输入用户名" name="name">
-                        </div>
+                            </div>
+
                     </div>
                     <div class="form-group pwd-top has-feedback">
                         <div class="password">
@@ -388,7 +389,7 @@
                     <label>
                         <input type="checkbox" value="remember-me"> Remember me
                     </label>
-                   <label  class="col-sm-4 col-md-4 col-lg-4 control-label register" onClick="goto_register()">注册</label>
+                    <label  class="col-sm-4 col-md-4 col-lg-4 control-label register" onClick="goto_register()"><a href="#">注册</a></label>
                 </div>
                 <div class="form-actions" style="text-align: center">
                 <%--  <a tabindex="5" class="btn btn-link text-muted" onClick="goto_register()">注册</a>
