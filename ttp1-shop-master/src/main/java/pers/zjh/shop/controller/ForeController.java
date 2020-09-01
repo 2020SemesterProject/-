@@ -522,4 +522,17 @@ public class ForeController {
         return "fore/myInformation";
     }
 
+    /*
+    *   用户个人信息修改
+    *
+    * */
+    @RequestMapping("user_update")
+    public String update(User user){
+        if(null==user){
+            return "fail";
+        }
+        userService.update(user);
+        return "redirect:Login";
+    }
+
 }
