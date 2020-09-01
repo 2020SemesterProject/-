@@ -11,12 +11,13 @@
     table{
         width:20%;
         text-align:center;
+        font-size: 16px;
     }
     body{
       background: url("/images/Information.jpg") no-repeat;
         background-size: cover;
     }
-    #btn{
+    #btn,#btn2{
         text-align: right;
     }
 
@@ -45,8 +46,8 @@
 
 
               <h3>  <td id="text1"><b>个人信息</b> </td></h3>
-              <td id="btn"> <button  class="btn btn-primary btn-sm"   data-toggle="modal" data-target="#myModal" >修改个人信息</button></td>
-
+              <td id="btn"> <button  class="btn btn-primary btn-sm"   data-toggle="modal" data-target="#myModal" >修改个人信息</button>
+                  <button  class="btn btn-primary btn-sm"  onclick="javascript:history.back(-1)">返回</button></td>
 
 
             <tbody>
