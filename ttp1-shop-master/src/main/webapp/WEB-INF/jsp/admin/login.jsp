@@ -5,6 +5,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="text/javascript" src="/js/jquery-2.1.1.js"></script>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <title>商城后台系统登录</title>
     <style type="text/css">
         body{
@@ -16,10 +21,10 @@
         }
         h1{margin-left:50px;font-size:30px;font-weight:700;text-shadow:0 1px 4px rgba(0,0,0,.2);color:black}
         .login-box{width:410px;margin:12px auto 0 auto;text-align:center;padding:30px;border-radius:10px;}
-        .login-box label{display:inline-block;width:100px;text-align:right;vertical-align:middle;color:black}
+       /* .login-box label{display:inline-block;width:100px;text-align:right;vertical-align:middle;color:black}*/
         .login-box img{width:148px;height:42px;border:none}
         input[type=text],input[type=password]{width:270px;height:42px;margin-top:25px;padding:0px 15px;border:1px solid rgba(255,255,255,.15);border-radius:6px;color:black;letter-spacing:2px;font-size:16px;}
-        button{margin-left:20px;margin-top:50px;cursor:pointer;width:100%;height:44px;padding:0;background:#ef4300;border:1px solid #ff730e;border-radius:6px;font-weight:700;color:#fff;font-size:24px;letter-spacing:15px;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+        .button22{margin-left:20px;margin-top:50px;cursor:pointer;width:100%;height:44px;padding:0;background:#ef4300;border:1px solid #ff730e;border-radius:6px;font-weight:700;color:#fff;font-size:24px;letter-spacing:15px;text-shadow:0 1px 2px rgba(0,0,0,.1)}
         input:focus{outline:none;box-shadow:0 2px 3px 0 rgba(0,0,0,.1) inset,0 2px 7px 0 rgba(0,0,0,.2)}
         button:hover{box-shadow:0 15px 30px 0 rgba(255,255,255,.15) inset,0 2px 7px 0 rgba(0,0,0,.2)}
 
@@ -72,42 +77,71 @@
 <div class="login-box">
     <h1>商城后台登录系统</h1>
     <form method="post" action="/admin/admin_login">
-
-        <div class="name">
-            <label>管理员账号：</label>
-            <input type="text" name="name" id="name" tabindex="1" autocomplete="off" />
-        </div>
-        <div class="password">
-            <label>密  码：</label>
-            <input type="password" name="password" maxlength="16" id="password" tabindex="2"/>
-        </div>
-<%--        <div class="code">
-            <label>验证码：</label>
-            <input type="text" placeholder="selse" maxlength="4" id="code" tabindex="3"/>
-            <div class="codeImg">
-                <img src="images/login/captcha.jpeg.jpg" />
-            </div>
-        </div>--%>
-<%--        <div class="remember">
-            <input type="checkbox" id="remember" tabindex="4">
-            <label>记住密码</label>
-        </div>--%>
+        <table>
+            <tr>
+                <th align="center"><font size="4">账号：</font></th>
+                <th><input type="text" name="name" id="name" tabindex="1" autocomplete="off" /></th>
+            </tr>
+            <tr>
+                <th><font size="4">密  码：</font></th>
+                <th><input type="password" name="password" maxlength="16" id="password" tabindex="2"/></th>
+            </tr>
+            <tr></tr>
+            <tr>
+                <th></th>
+                <th style='text-align:right'>
+                    <button type="button" class="btn btn-link"   data-toggle="modal" data-target="#myModal" >
+                    人脸识别登录
+                </button>
+                </th>
+            </tr>
+        </table>
 
         <div class="login">
-            <button type="submit" tabindex="5"  onClick="adminlogin()">登录</button>
+            <button class="button22" type="submit" tabindex="5"  onClick="adminlogin()">登录</button>
         </div>
     </form>
 
  </div>
 </div>
 
-<div class="card">
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">人脸识别登录</h4>
+            </div>
+            <div class="modal-body">
+            <center>
+                <table>
+                <tr><video id="video" width="400px" height="400px" ></video></tr>
+                    <tr><center>
+                        <button class="btn btn-info" id="open">开启摄像头</button>
+                        <button class="btn btn-warning" id="close">关闭摄像头</button>
+                    </center>
+                    </tr>
+                </table>
+            </center>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary id="CatchCode">确定人脸识别</button>
+            </div>
+        </div>
+    </div>
+</div>
+<%--<div class="card">
     <div class="cardHeader ">人脸识别登录</div>
     <button class="facebut" id="open">开启摄像头</button>
     <button class="facebut" id="close">关闭摄像头</button>
     <button class="facebut" id="CatchCode">确定人脸识别</button>
 
-</div>
+</div>--%>
 <div align="center" style="float: left;">
     <video id="video" width="400px" height="400px" autoplay></video>
     <canvas hidden="hidden" id="canvas" width="626" height="800"></canvas>
@@ -117,6 +151,7 @@
 
 </body>
 <script type="text/javascript">
+
     var video;//视频流对象
     var context;//绘制对象
     var canvas;//画布对象
