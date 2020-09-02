@@ -15,8 +15,6 @@ import java.util.List;
 
 /**
  * @Description:    订单业务逻辑接口实现层
- * @Author: Zhujinghui
- * @CreateDate: 2018/10/27 13:49
  */
 
 @Service

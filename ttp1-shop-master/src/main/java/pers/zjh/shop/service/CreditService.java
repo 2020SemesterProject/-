@@ -6,8 +6,6 @@ import java.util.List;
 
 /**
  * @Description:    积分业务逻辑接口
- * @Author: Zhujinghui
- * @CreateDate: 2018/10/27 13:46
  */
 
 public interface CreditService {

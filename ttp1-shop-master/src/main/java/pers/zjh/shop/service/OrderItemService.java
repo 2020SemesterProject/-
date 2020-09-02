@@ -7,8 +7,6 @@ import java.util.List;
 
 /**
  * @Description:    订单项业务逻辑接口
- * @Author: Zhujinghui
- * @CreateDate: 2018/10/27 13:46
  */
 
 public interface OrderItemService {

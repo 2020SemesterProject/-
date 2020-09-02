@@ -11,8 +11,6 @@ import java.util.List;
 
 /**
  * @Description:    产品图片业务逻辑接口实现层
- * @Author:         Zhujinghui
- * @CreateDate:     2018/10/27 13:51
  */
 
 @Service

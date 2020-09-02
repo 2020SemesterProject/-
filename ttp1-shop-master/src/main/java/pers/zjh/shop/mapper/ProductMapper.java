@@ -5,9 +5,7 @@ import pers.zjh.shop.pojo.Product;
 import pers.zjh.shop.pojo.ProductExample;
 
 /**
- * @Description:    商品持久映射层
- * @Author:         Zhujinghui
- * @CreateDate:     2018/10/27 17:12
+ * @Description:    商品
  */
 
 public interface ProductMapper {

@@ -5,9 +5,7 @@ import pers.zjh.shop.pojo.Category;
 import pers.zjh.shop.pojo.CategoryExample;
 
 /**
- * @Description:    分类持久映射层
- * @Author:         Zhujinghui
- * @CreateDate:     2018/10/27 17:10
+ * @Description:    分类持久
  */
 
 public interface CategoryMapper {

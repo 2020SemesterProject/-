@@ -5,9 +5,7 @@ import pers.zjh.shop.pojo.OrderItem;
 import pers.zjh.shop.pojo.OrderItemExample;
 
 /**
- * @Description:    订单项持久映射层
- * @Author:         Zhujinghui
- * @CreateDate:     2018/10/27 17:13
+ * @Description:    订单项
  */
 
 public interface OrderItemMapper {

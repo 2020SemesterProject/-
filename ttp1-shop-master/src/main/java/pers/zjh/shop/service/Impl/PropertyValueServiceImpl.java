@@ -14,8 +14,6 @@ import java.util.List;
 
 /**
  * @Description:    属性值业务逻辑接口实现层
- * @Author: Zhujinghui
- * @CreateDate: 2018/10/27 14:00
  */
 
 @Service

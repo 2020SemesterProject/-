@@ -6,8 +6,6 @@ import java.util.List;
 
 /**
  * @Description:    产品图片业务逻辑接口
- * @Author: Zhujinghui
- * @CreateDate: 2018/10/27 13:51
  */
 
 public interface ProductImageService {

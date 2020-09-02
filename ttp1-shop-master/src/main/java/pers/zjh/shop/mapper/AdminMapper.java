@@ -5,9 +5,8 @@ import pers.zjh.shop.pojo.Admin;
 import pers.zjh.shop.pojo.AdminExample;
 
 /**
- * @Description:    管理员持久映射层
- * @Author:         Zhujinghui
- * @CreateDate:     2018/10/27 17:08
+ * @Description:    管理员
+ *
  */
 
 public interface AdminMapper {

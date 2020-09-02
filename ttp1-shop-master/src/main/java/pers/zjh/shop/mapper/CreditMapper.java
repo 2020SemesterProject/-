@@ -5,9 +5,7 @@ import pers.zjh.shop.pojo.Credit;
 import pers.zjh.shop.pojo.CreditExample;
 
 /**
- * @Description:    积分持久映射层
- * @Author:         Zhujinghui
- * @CreateDate:     2018/10/27 17:13
+ * @Description:    积分
  */
 
 public interface CreditMapper {

@@ -5,9 +5,7 @@ import pers.zjh.shop.pojo.Property;
 import pers.zjh.shop.pojo.PropertyExample;
 
 /**
- * @Description:    属性持久映射层
- * @Author:         Zhujinghui
- * @CreateDate:     2018/10/27 17:11
+ * @Description:    属性
  */
 
 public interface PropertyMapper {

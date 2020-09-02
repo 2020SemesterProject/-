@@ -5,9 +5,7 @@ import pers.zjh.shop.pojo.User;
 import pers.zjh.shop.pojo.UserExample;
 
 /**
- * @Description:    会员持久映射层
- * @Author:         Zhujinghui
- * @CreateDate:     2018/10/27 17:10
+ * @Description:    会员
  */
 
 public interface UserMapper {
